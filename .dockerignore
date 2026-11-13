@@ -1,0 +1,10 @@
+.git
+**/node_modules
+**/vendor
+**/.env
+**/.env.testing
+**/dist
+backend/storage/logs/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+LOCAL_ACCESS.md

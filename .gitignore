@@ -1,0 +1,17 @@
+/backend/vendor/
+/backend/node_modules/
+/backend/.env
+/backend/.env.testing
+/backend/.phpunit.result.cache
+/backend/storage/*.key
+/backend/storage/logs/*
+/backend/storage/framework/cache/data/*
+/backend/storage/framework/sessions/*
+/backend/storage/framework/views/*
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env
+/.env
+/LOCAL_ACCESS.md
+*.log
+.DS_Store
