@@ -58,6 +58,7 @@ export default function FleetTable({
             <button
               key={code}
               className={filter === code ? "active" : ""}
+              aria-pressed={filter === code}
               onClick={() => setFilter(code)}
             >
               {label}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink, Outlet, Link } from "react-router-dom";
 import {
   Bike,
@@ -27,7 +27,30 @@ export default function AppLayout() {
   const { data: workspaceSettings } = useResource("settings");
   const notify = useToast();
   const [mobile, setMobile] = useState(false),
-    [profile, setProfile] = useState(false);
+    [profile, setProfile] = useState(false),
+    [smallScreen, setSmallScreen] = useState(() =>
+      window.matchMedia("(max-width: 700px)").matches,
+    );
+  const mobileMenuRef = useRef(null);
+  const mobileCloseRef = useRef(null);
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 700px)");
+    const update = () => setSmallScreen(media.matches);
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+  useEffect(() => {
+    if (!mobile || !smallScreen) return;
+    mobileCloseRef.current?.focus();
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setMobile(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("keydown", closeOnEscape);
+      mobileMenuRef.current?.focus();
+    };
+  }, [mobile, smallScreen]);
   const groups = [
     ["", [["/", "Dashboard", LayoutDashboard]]],
     [
@@ -76,7 +99,11 @@ export default function AppLayout() {
           onClick={() => setMobile(false)}
         />
       )}
-      <aside className={`sidebar ${mobile ? "open" : ""}`}>
+      <aside
+        id="main-navigation"
+        className={`sidebar ${mobile ? "open" : ""}`}
+        inert={smallScreen && !mobile}
+      >
         <Link to="/" className="brand" onClick={() => setMobile(false)}>
           <span className="brand-symbol">
             <Bike size={26} />
@@ -86,6 +113,7 @@ export default function AppLayout() {
           </span>
         </Link>
         <button
+          ref={mobileCloseRef}
           className="mobile-close icon-btn"
           aria-label="Close menu"
           onClick={() => setMobile(false)}
@@ -149,13 +177,16 @@ export default function AppLayout() {
           </div>
         </div>
       </aside>
-      <div className="app-main">
+      <div className="app-main" inert={smallScreen && mobile}>
         <header className="topbar">
           <div className="topbar-left">
             <button
+              ref={mobileMenuRef}
               className="mobile-menu icon-btn"
               onClick={() => setMobile(true)}
               aria-label="Open navigation"
+              aria-controls="main-navigation"
+              aria-expanded={mobile}
             >
               <Menu />
             </button>
@@ -171,6 +202,7 @@ export default function AppLayout() {
             <div className="profile-menu">
               <button
                 className="profile-trigger"
+                aria-label="Open profile menu"
                 aria-expanded={profile}
                 onClick={() => setProfile(!profile)}
               >

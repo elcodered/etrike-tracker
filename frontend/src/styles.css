@@ -2584,3 +2584,587 @@ details summary {
     transition: none !important;
   }
 }
+
+/* Fleet workspace visual system */
+:root {
+  color: #20352b;
+  background: #f4f7f3;
+  --green: #176447;
+  --dark: #123e31;
+  --muted: #596c61;
+  --border: #dce7de;
+  --surface: #fff;
+  --soft-shadow: 0 12px 32px #173d2910;
+}
+
+body {
+  background: radial-gradient(circle at 65% -10%, #e5f2e8 0, transparent 35%), #f4f7f3;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #77aa87;
+  outline-offset: 2px;
+}
+
+.sidebar {
+  width: 254px;
+  padding: 28px 17px 0;
+  background: linear-gradient(180deg, #fcfefb 0%, #fff 55%);
+  box-shadow: 6px 0 30px #25493608;
+}
+
+.app-main {
+  margin-left: 254px;
+}
+
+.brand {
+  padding: 0 7px;
+  color: #193c2b;
+}
+
+.brand-symbol {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background: #185b42;
+  box-shadow: 0 7px 16px #185b4230;
+}
+
+.brand-sub {
+  color: #62756a;
+  font-size: 9px;
+  letter-spacing: 1.35px;
+}
+
+.workspace-chip {
+  border-radius: 11px;
+  background: #f3f8f2;
+  border-color: #e1ebdf;
+  margin: 29px 3px 27px;
+  padding: 12px;
+  color: #314a3b;
+  font-size: 12px;
+}
+
+.workspace-chip small,
+.sidebar-profile small {
+  color: #627469;
+  font-size: 10px;
+}
+
+.workspace-avatar {
+  background: #dcebdd;
+  color: #275a3d;
+  width: 32px;
+  height: 32px;
+}
+
+.nav-group {
+  margin-bottom: 24px;
+}
+
+.nav-label {
+  font-size: 10px;
+  letter-spacing: 1.15px;
+  color: #687c6d;
+  margin: 0 12px 9px;
+}
+
+.nav-link {
+  min-height: 44px;
+  border-radius: 9px;
+  padding: 11px 12px;
+  color: #51675a;
+  font-size: 13px;
+}
+
+.nav-link:hover {
+  background: #eef5ed;
+  color: #185b42;
+}
+
+.nav-link.active {
+  background: #e4f1e5;
+  color: #185b42;
+  box-shadow: inset 3px 0 #27815b;
+}
+
+.sidebar-profile strong {
+  font-size: 12px;
+}
+
+.sidebar-profile button,
+.row-link {
+  color: #416e55;
+}
+
+.topbar {
+  height: 74px;
+  padding: 0 38px;
+  background: #fffffff0;
+}
+
+.breadcrumb,
+.timezone-label {
+  font-size: 12px;
+  color: #64766a;
+}
+
+.breadcrumb strong {
+  color: #294637;
+  font-weight: 650;
+}
+
+.page-content {
+  max-width: 1600px;
+  padding: 38px 38px 56px;
+}
+
+.page-heading {
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-size: clamp(29px, 2.4vw, 38px);
+  font-weight: 730;
+  letter-spacing: -1.3px;
+  color: #183b2a;
+}
+
+h2 {
+  font-size: 17px;
+  color: #254835;
+}
+
+.eyebrow {
+  margin-bottom: 9px;
+  color: #387656;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.25px;
+}
+
+.page-heading p {
+  margin-top: 9px;
+  font-size: 14px;
+  color: #5a6e61;
+}
+
+.heading-actions {
+  justify-content: flex-end;
+}
+
+.btn {
+  min-height: 42px;
+  padding: 10px 15px;
+  border-color: #cfded2;
+  border-radius: 9px;
+  color: #315d43;
+  font-size: 12px;
+  box-shadow: 0 1px 2px #1c42220a;
+}
+
+.btn.primary {
+  background: #176447;
+  border-color: #176447;
+  box-shadow: 0 6px 16px #17644726;
+}
+
+.btn.primary:hover:not(:disabled) {
+  background: #104c35;
+}
+
+.btn.small {
+  font-size: 11px;
+  min-height: 36px;
+}
+
+.date-pill {
+  padding: 6px 13px;
+  border-left: 1px solid var(--border);
+  color: #416e53;
+}
+
+.date-pill small,
+.date-pill strong {
+  font-size: 11px;
+}
+
+.report-banner,
+.info-banner {
+  background: #eaf4e9;
+  border-color: #d3e5d4;
+  border-radius: 12px;
+  padding: 17px 20px;
+}
+
+.report-banner strong {
+  color: #214b32;
+  font-size: 13px;
+}
+
+.report-banner span:not(.banner-icon),
+.report-banner a,
+.info-banner {
+  color: #42654b;
+  font-size: 12px;
+}
+
+.banner-icon {
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  border-radius: 10px;
+  background: #d6e9d1;
+  color: #246742;
+}
+
+.summary-grid {
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.summary-card {
+  min-height: 140px;
+  padding: 19px;
+  border-radius: 12px;
+  box-shadow: var(--soft-shadow);
+}
+
+.summary-top {
+  font-size: 12px;
+  font-weight: 600;
+  color: #52685a;
+}
+
+.summary-card strong {
+  margin: 15px 0 6px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #244b36;
+  font-variant-numeric: tabular-nums;
+}
+
+.summary-caption {
+  font-size: 10px;
+  color: #64796a;
+}
+
+.summary-card.rental {
+  background: linear-gradient(135deg, #1c694d, #123f32);
+  border-color: #1c694d;
+}
+
+.summary-card.rental strong,
+.summary-card.rental .summary-top,
+.summary-card.rental .summary-caption {
+  color: #fff;
+}
+
+.summary-card.rental .summary-caption {
+  opacity: .75;
+}
+
+.panel {
+  border-radius: 13px;
+  box-shadow: var(--soft-shadow);
+}
+
+.panel-heading {
+  padding: 22px 23px 18px;
+}
+
+.panel-heading p,
+.availability-description,
+.availability-bottom,
+.panel-footer {
+  font-size: 11px;
+  color: #63766a;
+}
+
+.dashboard-middle {
+  gap: 18px;
+}
+
+.collection-metrics strong {
+  color: #214c36;
+  font-size: 30px;
+}
+
+.collection-metrics > span {
+  font-size: 11px;
+  color: #53735d;
+}
+
+.availability-value {
+  color: #23633e;
+  font-weight: 700;
+}
+
+.count,
+.tabs button span {
+  font-size: 10px;
+  color: #315f42;
+}
+
+.view-toggle {
+  border-radius: 9px;
+}
+
+.view-toggle button {
+  color: #456950;
+}
+
+.view-toggle button[aria-pressed="true"],
+.tabs button.active {
+  background: #e1f0e2;
+  color: #185b3b;
+}
+
+.tabs button {
+  min-height: 36px;
+  border-radius: 7px;
+  color: #536b59;
+  font-size: 11px;
+}
+
+.search-input {
+  min-height: 40px;
+  border-radius: 8px;
+  color: #4f6b58;
+}
+
+.search-input input,
+input,
+select,
+textarea {
+  color: #263e2d;
+  font-size: 13px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #718477;
+}
+
+th {
+  background: #f2f7f1;
+  color: #4d6654;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+td {
+  color: #465b4c;
+  font-size: 12px;
+}
+
+td strong,
+.rental-cell {
+  color: #254c35;
+}
+
+tbody tr:hover {
+  background: #f5faf4;
+}
+
+.driver-name,
+.remarks-cell {
+  color: #566c5c;
+  font-size: 11px;
+}
+
+.unit-symbol {
+  width: 31px;
+  height: 31px;
+  color: #416e51;
+  background: #e8f2e7;
+  border-radius: 8px;
+}
+
+.badge {
+  border-radius: 6px;
+  padding: 6px 9px;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.status-RUNNING,
+.status-active,
+.status-submitted {
+  color: #28633c;
+}
+
+.status-REPAIR {
+  color: #a94335;
+}
+
+.status-STANDBY_FOR_REPAIR,
+.status-draft {
+  color: #86601d;
+}
+
+.fleet-card {
+  border-radius: 10px;
+  background: #fbfdfb;
+}
+
+.fleet-card p,
+.fleet-card small {
+  color: #536b59;
+  font-size: 11px;
+}
+
+.field {
+  color: #385442;
+  font-size: 12px;
+}
+
+.editor-toolbar {
+  background: #f3f8f2;
+  color: #496554;
+  font-size: 12px;
+}
+
+.editor-toolbar select {
+  min-height: 38px;
+  font-size: 12px;
+}
+
+.save-state {
+  font-size: 11px;
+  color: #326b42;
+}
+
+.save-state.unsaved {
+  color: #815c17;
+}
+
+.editor-table th {
+  padding: 14px 12px;
+}
+
+.editor-table td {
+  padding: 14px 12px;
+}
+
+.editor-table input,
+.editor-table select {
+  min-height: 40px;
+  padding: 9px 10px;
+  font-size: 12px;
+}
+
+.editor-plate {
+  font-size: 13px;
+}
+
+.quick-status,
+.quick-rental {
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.quick-status button,
+.quick-rental button {
+  min-height: 27px;
+  border-radius: 6px;
+  padding: 5px 7px;
+  color: #365e41;
+  border: 1px solid #cddfce;
+  background: #fff;
+  font-size: 10px;
+}
+
+.quick-status button:hover:not(:disabled),
+.quick-rental button:hover:not(:disabled) {
+  background: #e6f2e6;
+}
+
+.quick-status button.selected {
+  background: #dceedd;
+  border-color: #96c39b;
+  color: #185d3a;
+  font-weight: 700;
+}
+
+.money-input {
+  border-radius: 8px;
+}
+
+.money-input > span {
+  color: #476450;
+  font-size: 12px;
+}
+
+.editor-bottom {
+  background: #f7faf6;
+  color: #4b6654;
+  font-size: 12px;
+}
+
+@media (max-width: 1250px) {
+  .sidebar { width: 216px; }
+  .app-main { margin-left: 216px; }
+  .page-content { padding: 30px 24px 44px; }
+  .topbar { padding: 0 24px; }
+  .summary-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 950px) {
+  .sidebar { width: 190px; }
+  .app-main { margin-left: 190px; }
+  .page-heading { flex-direction: column; }
+  .heading-actions { justify-content: flex-start; width: 100%; }
+}
+
+@media (max-width: 700px) {
+  .sidebar { width: min(290px, 85vw); }
+  .app-main { margin-left: 0; }
+  .topbar { height: 62px; padding: 0 18px; }
+  .page-content { padding: 25px 16px 42px; }
+  .page-heading { gap: 16px; margin-bottom: 22px; }
+  .page-heading p { font-size: 13px; }
+  .heading-actions .btn { min-height: 40px; font-size: 11px; }
+  .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .summary-card { min-height: 118px; padding: 15px; }
+  .summary-card strong { font-size: 28px; }
+  .summary-card.rental strong { font-size: 26px; }
+  .summary-top { font-size: 11px; }
+  .summary-caption { font-size: 9px; }
+  .panel-heading { padding: 18px 16px; }
+  .panel-heading p { font-size: 11px; }
+  .collection-metrics > span { font-size: 10px; }
+  .fleet-toolbar { padding: 0 16px 16px; }
+  .tabs { width: 100%; flex-wrap: wrap; overflow: visible; gap: 4px; }
+  .tabs button { flex: none; font-size: 11px; }
+  .fleet-table td { font-size: 12px; }
+  .fleet-table td:nth-child(2) { font-size: 11px; }
+  .fleet-table td:nth-child(6) { font-size: 10px; }
+  .panel-footer { font-size: 10px; }
+  .editor-toolbar { padding: 15px 16px; }
+  .editor-toolbar > div { width: 100%; }
+  .editor-toolbar select { flex: 1; max-width: none; }
+  .editor-table tr { margin: 0 10px 10px; border: 1px solid var(--border); border-radius: 10px; background: #fff; }
+  .editor-table tr:first-child { margin-top: 10px; }
+  .editor-table tr:last-child { margin-bottom: 10px; }
+  .editor-table td:nth-child(5):before {
+    content: "Rental";
+    display: block;
+    margin-bottom: 7px;
+    color: #526b58;
+    font-size: 10px;
+  }
+  .editor-table .quick-status button { min-height: 35px; padding: 7px 9px; font-size: 11px; }
+  .editor-table .quick-rental button { min-height: 33px; font-size: 11px; }
+  .save-state { font-size: 10px; }
+  .report-notes { padding: 18px; }
+}

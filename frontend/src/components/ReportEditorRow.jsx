@@ -97,6 +97,8 @@ export default function ReportEditorRow({
                   type="button"
                   disabled={disabled}
                   className={item.operational_status === code ? "selected" : ""}
+                  aria-pressed={item.operational_status === code}
+                  aria-label={`Set ${item.plate_number} status to ${labels[code]}`}
                   onClick={() => statusChange(s.id)}
                   key={code}
                 >
